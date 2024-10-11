@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 35vh;
+    justify-content: center;
+    align-items: center;
+    /* PlaceHolder */
+
+    background-color: white;
+}
+.SOSButton{
+    width: 50%;
+    height: 80%;
+    border-radius: 100%;
+    font-size: xx-large;
+
+    /* PlaceHolder */
+    background-color: red;
+    color: white;
+    border: solid 10px black;
+}
+.SOSButton:hover{
+    background-color: white;
+    color: red;
+}
