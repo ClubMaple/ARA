@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1em;
+    width: 80%;
+}
+.formContainer form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    min-height: 60vh;
+}
+.FormField{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.FormField label{
+    margin: 8px 0;
+}
+.FormField input{
+    height: 2em;
+    margin: 0 0 12px 0;
+}
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 3em;
+}
+.botones button {
+    font-size: large;
+    width: 30%;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    border: solid 2px white;
+}
+.botones button:hover {
+    background-color: #258bf8;
+    border: solid 2px black;
+}

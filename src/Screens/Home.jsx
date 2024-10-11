@@ -14,7 +14,7 @@ function Home () {
             <Header/>
             <Map/>
             <SOSButton className={Styles.SOSButton}/>
-            <Navbar />
+            <Navbar/>
         </div>
     )
 }
