@@ -1,9 +1,9 @@
 import React from "react";
 import Styles from "./RegisterForm.module.css";
 
-function RegisterForm () {
+function RegisterForm() {
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         alert('Hi');
     }
@@ -11,64 +11,64 @@ function RegisterForm () {
     return (
         /* Aqui va el formulario de registro */
         <div className={Styles.container}>
-            
-            <h1>Registro</h1>
-
             <div className={Styles.formContainer}>
                 <form onSubmit={handleSubmit}>
+                    <h1>Registro</h1>
                     <div className={Styles.FormField}>
                         <label>Nombre</label>
                         <input
-                            type="text" 
+                            type="text"
+                            name="PlaceHolder"
+                        />
+                    </div>
+                    <div className={Styles.FormRow}>
+                        <div className={Styles.FormField}>
+                            <label>Sexo</label>
+                            <input
+                                type="text"
+                                name="PlaceHolder"
+                            />
+                        </div>
+                        <div className={Styles.FormField}>
+                            <label>Edad</label>
+                            <input
+                                type="text"
+                                name="PlaceHolder"
+                            />
+                        </div>
+                    </div>
+                    <div className={Styles.FormField}>
+                        <label>Nombre</label>
+                        <input
+                            type="text"
                             name="PlaceHolder"
                         />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Nombre</label>
                         <input
-                            type="text" 
+                            type="text"
                             name="PlaceHolder"
                         />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Nombre</label>
                         <input
-                            type="text" 
+                            type="text"
                             name="PlaceHolder"
                         />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Nombre</label>
                         <input
-                            type="text" 
+                            type="text"
                             name="PlaceHolder"
                         />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Nombre</label>
                         <input
-                            type="text" 
-                            name="PlaceHolder"
-                        />
-                    </div>
-                    <div className={Styles.FormField}>
-                        <label>Nombre</label>
-                        <input
-                            type="text" 
-                            name="PlaceHolder"
-                        />
-                    </div>
-                    <div className={Styles.FormField}>
-                        <label>Nombre</label>
-                        <input
-                            type="text" 
-                            name="PlaceHolder"
-                        />
-                    </div>
-                    <div className={Styles.FormField}>
-                        <label>Nombre</label>
-                        <input
-                            type="text" 
+                            type="text"
                             name="PlaceHolder"
                         />
                     </div>
@@ -78,7 +78,7 @@ function RegisterForm () {
                 </form>
 
             </div>
-            
+
         </div>
     )
 }

@@ -2,6 +2,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #0F0F0F;
+}
+
+h1{
+    color: #FFFFFF;
+} 
+
+input{
+    background-color: #0F0F0F;
+    border: 2px solid #222222;
+    border-radius: 100px;
+    color: #F1F1F1;
+    font-size: 16px;
+    padding: 0px 15px;
+}
+
+label{
+    color: #F1F1F1;
 }
 .formContainer{
     display: flex;
@@ -48,3 +66,17 @@
     background-color: #258bf8;
     border: solid 2px black;
 }
+
+.FormRow {
+    display: flex; /* Pone los elementos en una fila */
+    gap: 50px; /* Espacio entre los campos, puedes ajustarlo según lo prefieras */
+  }
+  
+  .FormField {
+    flex: 1; /* Hace que los campos se ajusten al tamaño disponible de manera uniforme */
+    display: flex;
+    flex-direction: column;
+  }
+  
+ 
+  
