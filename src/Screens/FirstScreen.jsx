@@ -1,6 +1,6 @@
 import React from "react";
-import Styles from "./FirstScreen.module.css";
 import { Link } from "react-router-dom";
+import Styles from "./FirstScreen.module.css";
 
 
 function FirstScreen () {
@@ -9,6 +9,7 @@ function FirstScreen () {
         <div className={Styles.container}>
             <div className={Styles.bienvenida}>
                 <h1>Bienvenido a la App</h1>
+                <img src="/logoPlaceHolder.png" alt="" />
             </div>
             <div className={Styles.botones}>
                 <button><Link to="/register">Registro</Link></button>

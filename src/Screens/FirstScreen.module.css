@@ -6,8 +6,11 @@
     min-height: 100vh;
     text-align: center;
 }
-.bienvenida{
+.bienvenida {
     font-size: 30px;
+}
+h1{
+    color: black !important;
 }
 .botones{
     display: flex;
