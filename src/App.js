@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* Pantallas */
 import FirstScreen from './Screens/FirstScreen';
@@ -12,9 +13,13 @@ de pantalla cambiandolo por la pantalla que quieres ver  ( Home , FirstScreen o 
 
 function App() {
   return (
-    <>
-      <RegisterForm/> {/* Cambia este elemento por el nombre de la pantalla */}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FirstScreen />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<RegisterForm />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

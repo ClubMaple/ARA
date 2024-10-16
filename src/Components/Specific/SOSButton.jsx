@@ -9,11 +9,17 @@ const SOSButton = () => {
     const handleSOSMauseDown = () => {
         timeRef.current = setTimeout(() => {
             setShowButtons(true);
-        }, 3000);
+        }, 2000);
     }
     const handleSOSMauseUp = () => {
         clearTimeout(timeRef.current);
     }
+
+    /* Funciones de pruebas */
+    const functionalityTest = async() => {
+        alert('Prueba de funcionalidad')
+    }
+
     return (
         <div className={Styles.container}>
             <button 
@@ -29,13 +35,22 @@ const SOSButton = () => {
 
             {showButtons && (
                 <>
-                    <button className={`${Styles.aditionalButton} ${Styles.leftButton}`}>
+                    <button 
+                        className={`${Styles.buttonPosition} ${Styles.leftButton}`} 
+                        onClick={functionalityTest}
+                    >
                         Botón 1
                     </button>
-                    <button className={`${Styles.aditionalButton} ${Styles.centerButton}`}>
+                    <button 
+                        className={`${Styles.buttonPosition} ${Styles.centerButton}`}
+                        onClick={functionalityTest}
+                    >
                         Botón 2
                     </button>
-                    <button className={`${Styles.aditionalButton} ${Styles.rightButton}`}>
+                    <button 
+                        className={`${Styles.buttonPosition} ${Styles.rightButton}`}
+                        onClick={functionalityTest}
+                    >
                         Botón 3
                     </button>
                 </>

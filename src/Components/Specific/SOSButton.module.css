@@ -16,37 +16,116 @@
     max-height: 200px;
     border-radius: 50%;
     font-size: xx-large;
+    z-index: 10;
 
     /* PlaceHolder */
     background-color: red;
     color: white;
     border: solid 10px black;
 }
-.SOSButton:hover{
+.SOSButton:active{
     background-color: white;
     color: red;
 }
 
-.aditionalButton {
+
+
+
+
+
+/* Estilos comunes para los botones */
+.buttonPosition {
     position: absolute;
-    border-radius: 50%;
-    height: 30%;
+    top: 50%; /* Iniciar desde el centro vertical */
+    left: 70%; /* Iniciar desde el centro horizontal */
+    transform: translate(-50%, -50%); /* Centrar completamente */
+    animation-duration: 1s;
+    animation-fill-mode: forwards; /* Mantener en la posición final */
+    z-index: 1;
     width: 30%;
+    height: 30%;
     max-width: 70px;
     max-height: 70px;
+    border-radius: 50%;
 }
 
+/* Botón izquierdo */
 .leftButton {
-    left: 15%;
-    top: 80%;
+    animation-name: slidein-left;
+    --final-left: 15%;  /* Posición final a la izquierda */
+    --final-top: 80%;   /* Posición final hacia abajo */
 }
 
+/* Botón central */
 .centerButton {
-    left: 42%;
-    top: 95%;
+    animation-name: slidein-center;
+    --final-left: 42%;  /* Posición final en el centro */
+    --final-top: 95%;   /* Posición final más abajo */
 }
 
+/* Botón derecho */
 .rightButton {
-    right: 15%;
-    top: 80%;
+    animation-name: slidein-right;
+    --final-right: -100%;  /* Posición final a la derecha */
+    --final-top: 80%;    /* Posición final hacia abajo */
+}
+
+/* Animación para el botón izquierdo */
+@keyframes slidein-left {
+    from {
+        top: 50%;  /* Iniciar desde el centro del botón principal */
+        left: 50%;  /* Iniciar desde el centro del botón principal */
+        transform: translate(-50%, -50%);
+        width: 0;  /* Botones empiezan invisibles y pequeños */
+        height: 0;
+        margin-left: 0%;
+    }
+  
+    to {
+        top: var(--final-top);   /* Moverse a la posición final en la parte superior */
+        left: var(--final-left);  /* Moverse a la izquierda */
+        transform: none;
+        width: 100%;  /* Tamaño final del botón */
+        height: 100%;
+    }
+}
+
+/* Animación para el botón central */
+@keyframes slidein-center {
+    from {
+        top: 50%;  /* Iniciar desde el centro del botón principal */
+        left: 50%;  /* Iniciar desde el centro del botón principal */
+        transform: translate(-50%, -50%);
+        width: 0;  /* Botones empiezan invisibles y pequeños */
+        height: 0;
+        margin-left: 0%;
+    }
+  
+    to {
+        top: var(--final-top);   /* Moverse a la posición final */
+        left: var(--final-left);  /* Mantenerse centrado */
+        transform: none;
+        width: 100%;  /* Tamaño final del botón */
+        height: 100%;
+    }
+}
+
+/* Animación para el botón derecho */
+@keyframes slidein-right {
+    from {
+        top: 50%;  /* Iniciar desde el centro del botón principal */
+        left: 50%;  /* Iniciar desde el centro del botón principal */
+        transform: translate(-50%, -50%);
+        width: 0;  /* Botones empiezan invisibles y pequeños */
+        height: 0;
+        margin-right: 0%;
+    }
+  
+    to {
+        top: var(--final-top);   /* Moverse a la posición final en la parte superior */
+        right: var(--final-right);  /* Moverse a la derecha */
+        transform: none;
+        width: 100%;  /* Tamaño final del botón */
+        height: 100%;
+    }
 }

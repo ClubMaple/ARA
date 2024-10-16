@@ -1,5 +1,6 @@
 import React from "react";
 import Styles from "./FirstScreen.module.css";
+import { Link } from "react-router-dom";
 
 
 function FirstScreen () {
@@ -10,8 +11,8 @@ function FirstScreen () {
                 <h1>Bienvenido a la App</h1>
             </div>
             <div className={Styles.botones}>
-                <button>Registro</button>
-                <button>Ingresar</button>
+                <button><Link to="/register">Registro</Link></button>
+                <button><Link to="/home">Ingresar</Link></button>
             </div>
             
         </div>

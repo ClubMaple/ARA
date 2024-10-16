@@ -11,9 +11,9 @@ function Home () {
     return (
         <div className={Styles.container}>
 
-            <Header/>
-            <Map/>
-            <SOSButton className={Styles.SOSButton}/>
+            <Header />
+            <Map />
+            <SOSButton />
             <Navbar/>
         </div>
     )
