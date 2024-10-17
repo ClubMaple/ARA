@@ -13,7 +13,7 @@ function FirstScreen () {
             </div>
             <div className={Styles.botones}>
                 <button><Link to="/register">Registro</Link></button>
-                <button><Link to="/home">Ingresar</Link></button>
+                <button><Link to="/LogIn">Ingresar</Link></button>
             </div>
             
         </div>
