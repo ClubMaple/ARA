@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .callerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .callerImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .callerName {
+    font-size: 24px;
+    color: black;
+  }
+  
+  .callActions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+  }
+  
+  .acceptButton,
+  .declineButton {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 18px;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .acceptButton {
+    background-color: green;
+    color: white;
+  }
+  
+  .declineButton {
+    background-color: red;
+    color: white;
+  }
+  
+  .acceptButton:active,
+  .declineButton:active {
+    transform: scale(0.95);
+  }
+  
+  .circleAnimation {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .hangupButton {
+    background-color: red; /* Rojo para colgar */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px; /* Ajusta la posición del botón de colgar */
+  }
