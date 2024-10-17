@@ -30,3 +30,7 @@ h1{
     background-color: #258bf8;
     border: solid 2px black;
 }
+
+img{
+    width: 50%;
+}

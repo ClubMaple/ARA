@@ -9,7 +9,7 @@ function FirstScreen () {
         <div className={Styles.container}>
             <div className={Styles.bienvenida}>
                 <h1>Bienvenido a la App</h1>
-                <img src="/logoPlaceHolder.png" alt="" />
+                <img src="/ARA.png" alt="" />
             </div>
             <div className={Styles.botones}>
                 <button><Link to="/register">Registro</Link></button>

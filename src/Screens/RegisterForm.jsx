@@ -15,11 +15,27 @@ function RegisterForm() {
                 <form onSubmit={handleSubmit}>
                     <h1>Registro</h1>
                     <div className={Styles.FormField}>
-                        <label>Nombre</label>
+                        <label>Nombre(s)</label>
                         <input
                             type="text"
                             name="PlaceHolder"
                         />
+                    </div>
+                    <div className={Styles.FormRow}>
+                        <div className={Styles.FormField}>
+                            <label>Apellido paterno</label>
+                            <input
+                                type="text"
+                                name="apellidoPaterno"
+                            />
+                        </div>
+                        <div className={Styles.FormField}>
+                            <label>Apellido materno</label>
+                            <input
+                                type="text"
+                                name="apellidoMaterno"
+                            />
+                        </div>
                     </div>
                     <div className={Styles.FormRow}>
                         <div className={`${Styles.FormField} ${Styles.FormFieldTelefono}`}>
@@ -36,21 +52,6 @@ function RegisterForm() {
                                 name="edad"
                             />
                         </div>
-                    </div>
-
-                    <div className={Styles.FormField}>
-                        <label>Apellido paterno</label>
-                        <input
-                            type="text"
-                            name="PlaceHolder"
-                        />
-                    </div>
-                    <div className={Styles.FormField}>
-                        <label>Apellido materno</label>
-                        <input
-                            type="text"
-                            name="PlaceHolder"
-                        />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Nombre</label>
