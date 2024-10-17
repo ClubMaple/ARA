@@ -8,8 +8,7 @@ const Navbar = () => {
             <ul className={Styles.navbar__links}>
                 <li className={Styles.navbar__link}><Link to="/home">Home</Link></li>
                 <li className={Styles.navbar__link}><Link to="/fakeCall">FakeCall</Link></li>
-                <li className={Styles.navbar__link}><Link to="/settings">Configuraciones</Link></li>
-                
+                <li className={Styles.navbar__link}><Link to="/settings">Settings</Link></li>
             </ul>
         </div>
     )

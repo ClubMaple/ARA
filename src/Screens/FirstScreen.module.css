@@ -3,24 +3,30 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     text-align: center;
 }
+
 .bienvenida {
     font-size: 30px;
 }
+
 h1{
     color: black !important;
 }
+
 .botones{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     height: 3em;
 }
+
 .botones button {
-    font-size: large;
-    width: 30%;
+    font-size: 16px;
+    border-radius: 100px;
+    font-weight: bold;
+    width: 40%;
     height: 100%;
     background-color: #007bff;
     color: white;
@@ -28,7 +34,6 @@ h1{
 }
 .botones button:hover {
     background-color: #258bf8;
-    border: solid 2px black;
 }
 
 img{

@@ -11,10 +11,10 @@ function LogIn () {
     return (
         <div className={Styles.container}>
             <form className={Styles.logInForm} onSubmit={handleSubmit}>
-                <label className={Styles.logInLabel}>Usuario:</label>
+                <label className={Styles.logInLabel}>Usuario</label>
                 <input type="text" name="username" className={Styles.logInField}/>
                 <br/>
-                <label className={Styles.logInLabel}>Contraseña:</label>
+                <label className={Styles.logInLabel}>Contraseña</label>
                 <input type="password" name="password" className={Styles.logInField}/>
                 <br/>
                 <button type="submit" className={Styles.logInButton}><Link to="/home">Ingresar</Link></button>
