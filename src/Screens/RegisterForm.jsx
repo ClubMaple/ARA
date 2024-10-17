@@ -22,30 +22,31 @@ function RegisterForm() {
                         />
                     </div>
                     <div className={Styles.FormRow}>
-                        <div className={Styles.FormField}>
-                            <label>Sexo</label>
+                        <div className={`${Styles.FormField} ${Styles.FormFieldTelefono}`}>
+                            <label>Teléfono</label>
                             <input
-                                type="text"
-                                name="PlaceHolder"
+                                type="number"
+                                name="telefono"
                             />
                         </div>
-                        <div className={Styles.FormField}>
+                        <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>
                             <label>Edad</label>
                             <input
-                                type="text"
-                                name="PlaceHolder"
+                                type="number"
+                                name="edad"
                             />
                         </div>
                     </div>
+
                     <div className={Styles.FormField}>
-                        <label>Nombre</label>
+                        <label>Apellido paterno</label>
                         <input
                             type="text"
                             name="PlaceHolder"
                         />
                     </div>
                     <div className={Styles.FormField}>
-                        <label>Nombre</label>
+                        <label>Apellido materno</label>
                         <input
                             type="text"
                             name="PlaceHolder"
@@ -73,7 +74,7 @@ function RegisterForm() {
                         />
                     </div>
                     <div className={Styles.botones}>
-                        <button type="submit">Enviar</button>
+                        <button type="submit">Siguiente</button>
                     </div>
                 </form>
 

@@ -1,27 +1,30 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0F0F0F;
+    background-color: #FFFFFF;
 }
 
-h1{
-    color: #FFFFFF;
-} 
+h1 {
+    color: #000000;
+}
 
-input{
-    background-color: #0F0F0F;
-    border: 2px solid #222222;
+input,
+select {
+    background-color: #DCE5EA;
     border-radius: 100px;
-    color: #F1F1F1;
+    border: 1px solid #DCE5EA;
+    color: #000000;
     font-size: 16px;
-    padding: 0px 15px;
+    width: 100%;
 }
 
-label{
-    color: #F1F1F1;
+label {
+    color: #000000;
+    font-weight: bold;
 }
-.formContainer{
+
+.formContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,54 +32,69 @@ label{
     padding: 2em 1em;
     width: 80%;
 }
-.formContainer form{
+
+.formContainer form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 95%;
     min-height: 60vh;
 }
-.FormField{
+
+.FormField {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.FormField label{
+
+.FormField label {
     margin: 8px 0;
 }
-.FormField input{
+
+.FormField input {
     height: 2em;
     margin: 0 0 12px 0;
 }
-.botones{
+
+.botones {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     height: 3em;
 }
+
 .botones button {
     font-size: large;
-    width: 30%;
+    border-radius: 100px;
+    width: 100%;
     height: 100%;
-    background-color: #007bff;
+    background-color: #FF0000;
     color: white;
+    font-size: 16px;
+    font-weight: bold;
     border: solid 2px white;
 }
+
 .botones button:hover {
     background-color: #258bf8;
     border: solid 2px black;
 }
 
 .FormRow {
-    display: flex; /* Pone los elementos en una fila */
-    gap: 50px; /* Espacio entre los campos, puedes ajustarlo según lo prefieras */
-  }
-  
-  .FormField {
-    flex: 1; /* Hace que los campos se ajusten al tamaño disponible de manera uniforme */
     display: flex;
-    flex-direction: column;
-  }
-  
- 
-  
+    gap: 5%;
+    width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+}
+
+.FormFieldTelefono {
+    flex: 0 0 65%; /* Ancho fijo del 70% */
+}
+
+.FormFieldEdad {
+    flex: 0 0 30%; /* Ancho fijo del 30% */
+}
+
+.FormField input {
+    width: 100%; /* Asegura que el input ocupe todo el ancho del contenedor */
+    box-sizing: border-box; /* Incluye el padding y borde en el cálculo del ancho */
+}
