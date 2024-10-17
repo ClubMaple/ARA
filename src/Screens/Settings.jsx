@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 
 function Settings () {
     return (
-        /* Aqui va un contenedor -> texto de bienvenida, Explicación de la app -> Boton de Registro, Boton de Ingresar */
         <div className={Styles.container}>
-            <div className={Styles.container}>
-                <h1 style={{color:"black"}}>Aqui iria el Menu de configuración, si nos hubieran dado más tiempo!! 🙄🙄🙄😑😐😐</h1>
-            </div>
-            <Link to="/home" style={{color: "black"}}>Volver</Link>
+            <div className={Styles.botonSalir}><h3><Link to="/home">X</Link></h3></div>
+            <h1 className={Styles.titleSettings}>Settings</h1>
+            <ul className={Styles.lista}>
+                <li><Link to="/settings/account">Cuenta</Link></li>
+                <li><Link to="/settings/notifications">Notificaciones</Link></li>
+                <li><Link to="/settings/privacy">Privacidad</Link></li>
+                <li><Link to="/">Cerrar sesión</Link></li>
+            </ul>
         </div>
     )
 }
