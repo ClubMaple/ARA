@@ -9,32 +9,22 @@ function RegisterForm() {
     }
 
     return (
-        /* Aqui va el formulario de registro */
         <div className={Styles.container}>
             <div className={Styles.formContainer}>
                 <form onSubmit={handleSubmit}>
                     <h1>Registro</h1>
                     <div className={Styles.FormField}>
                         <label>Nombre(s)</label>
-                        <input
-                            type="text"
-                            name="PlaceHolder"
-                        />
+                        <input type="text" name="nombre" />
                     </div>
                     <div className={Styles.FormRow}>
                         <div className={Styles.FormField}>
                             <label>Apellido paterno</label>
-                            <input
-                                type="text"
-                                name="apellidoPaterno"
-                            />
+                            <input type="text" name="apellidoPaterno" />
                         </div>
                         <div className={Styles.FormField}>
                             <label>Apellido materno</label>
-                            <input
-                                type="text"
-                                name="apellidoMaterno"
-                            />
+                            <input type="text" name="apellidoMaterno" />
                         </div>
                     </div>
                     <div className={Styles.FormRow}>
@@ -43,6 +33,14 @@ function RegisterForm() {
                             <input
                                 type="number"
                                 name="telefono"
+                                maxLength="10"
+                                onInput={(e) => {
+                                    if (e.target.value.length > 10) {
+                                        e.target.value = e.target.value.slice(0, 10);
+                                    }
+                                }}
+                                onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
+                                
                             />
                         </div>
                         <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>
@@ -50,39 +48,48 @@ function RegisterForm() {
                             <input
                                 type="number"
                                 name="edad"
+                                maxLength="3"
+                                onInput={(e) => {
+                                    if (e.target.value.length > 3) {
+                                        e.target.value = e.target.value.slice(0, 3);
+                                    }
+                                }}
+                                onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
                             />
                         </div>
                     </div>
                     <div className={Styles.FormField}>
-                        <label>Nombre</label>
-                        <input
-                            type="text"
-                            name="PlaceHolder"
-                        />
+                        <label>Nombre de Usuario</label>
+                        <input type="text" name="username" />
                     </div>
                     <div className={Styles.FormField}>
-                        <label>Nombre</label>
-                        <input
-                            type="text"
-                            name="PlaceHolder"
-                        />
+                        <label>Contraseña</label>
+                        <input type="password" name="password" />
                     </div>
                     <div className={Styles.FormField}>
-                        <label>Nombre</label>
-                        <input
-                            type="text"
-                            name="PlaceHolder"
-                        />
+                        <label>Sexo</label>
+                        <div className={Styles.RadioGroup}>
+                            <label>
+                                <input type="radio" name="sexo" value="masculino" />
+                                Masculino
+                            </label>
+                            <label>
+                                <input type="radio" name="sexo" value="femenino" />
+                                Femenino
+                            </label>
+                            <label>
+                                <input type="radio" name="sexo" value="nobinario" />
+                                No binario
+                            </label>
+                        </div>
                     </div>
                     <div className={Styles.botones}>
                         <button type="submit">Siguiente</button>
                     </div>
                 </form>
-
             </div>
-
         </div>
-    )
+    );
 }
 
 export default RegisterForm;

@@ -15,13 +15,13 @@ select {
     border-radius: 100px;
     border: 1px solid #DCE5EA;
     color: #000000;
-    font-size: 15px;
+    font-size: 16px;
     width: 100%;
-    padding: 15px;
+    padding: 19px 15px;
 }
 
 label {
-    font-size: 15px;
+    font-size: 16px;
     color: #000000;
     font-weight: bold;
 }
@@ -67,6 +67,7 @@ label {
 }
 
 .botones button {
+    margin-top: 22px;
     font-size: large;
     border-radius: 100px;
     width: 100%;
@@ -100,4 +101,25 @@ label {
 .FormField input {
     width: 100%; /* Asegura que el input ocupe todo el ancho del contenedor */
     box-sizing: border-box; /* Incluye el padding y borde en el cálculo del ancho */
+}
+
+.RadioGroup input[type="radio"] {
+    width: 16px; /* Ajusta este valor para hacer los radio buttons más pequeños o más grandes */
+    height: 16px;
+    font-size: 10px;
+    margin: 0; /* Elimina cualquier margen adicional */
+}
+
+.RadioGroup {
+    display: flex;
+    gap: 15px; /* Espacio entre las opciones */
+    justify-content: center; /* Centra las opciones horizontalmente */
+    align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.RadioGroup label {
+    font-size: 13px;
+    display: flex;
+    align-items: center; /* Alinea cada radio button y su texto verticalmente */
+    gap: 5px; /* Espacio entre el radio button y el texto */
 }
