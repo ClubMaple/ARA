@@ -15,16 +15,30 @@ function RegisterForm() {
                     <h1>Registro</h1>
                     <div className={Styles.FormField}>
                         <label>Nombre(s)</label>
-                        <input type="text" name="nombre" />
-                    </div>
+                        <input
+                            type="text"
+                            name="nombres"
+                            maxLength="30"
+                            onInput={(e) => {
+                                e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+                            }}
+                        />                    </div>
                     <div className={Styles.FormRow}>
                         <div className={Styles.FormField}>
                             <label>Apellido paterno</label>
-                            <input type="text" name="apellidoPaterno" />
+                            <input type="text" name="apellidoPaterno" maxLength="15"
+                                onInput={(e) => {
+                                    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+                                }}
+                            />
                         </div>
                         <div className={Styles.FormField}>
                             <label>Apellido materno</label>
-                            <input type="text" name="apellidoMaterno" />
+                            <input type="text" name="apellidoMaterno" maxLength="15"
+                                onInput={(e) => {
+                                    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+                                }}
+                            />
                         </div>
                     </div>
                     <div className={Styles.FormRow}>
@@ -40,7 +54,7 @@ function RegisterForm() {
                                     }
                                 }}
                                 onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
-                                
+
                             />
                         </div>
                         <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>
@@ -60,11 +74,11 @@ function RegisterForm() {
                     </div>
                     <div className={Styles.FormField}>
                         <label>Nombre de Usuario</label>
-                        <input type="text" name="username" />
+                        <input type="text" name="username" maxLength="25" />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Contraseña</label>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" maxLength="30" />
                     </div>
                     <div className={Styles.FormField}>
                         <label>Sexo</label>
