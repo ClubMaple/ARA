@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Styles from "./RegisterForm.module.css";
 
+
 const municipiosAguascalientes = [
     "Aguascalientes",
     "Asientos",
