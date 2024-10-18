@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+import React from "react";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
+=======
 import React, { useState } from "react";
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
 import Styles from "./RegisterForm.module.css";
 
 
@@ -25,6 +30,9 @@ const tiposDiscapacidad = [
 ];
 
 function RegisterForm() {
+<<<<<<< HEAD
+    const navigate = useNavigate(); // Inicializa useNavigate
+=======
     const [formData, setFormData] = useState({
         nombres: '',
         apellidoPaterno: '',
@@ -45,10 +53,12 @@ function RegisterForm() {
             [name]: value // Este cambio asegura que el valor se actualice correctamente
         }));
     };
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Hi');
+        // Redirige a la pantalla RegisterFormReferenteUno
+        navigate('/RegisterFormReferenteUno'); // Asegúrate de que la ruta esté correctamente configurada
     }
 
     return (
@@ -63,8 +73,14 @@ function RegisterForm() {
                             name="nombres"
                             id="nombres"
                             maxLength="30"
+<<<<<<< HEAD
+                            onInput={(e) => {
+                                e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+                            }}
+=======
                             value={formData.nombres}
                             onChange={handleChange}
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
                         />
                     </div>
                     <div className={Styles.FormRow}>
@@ -106,6 +122,10 @@ function RegisterForm() {
                                         setFormData((prevData) => ({ ...prevData, telefono: value }));
                                     }
                                 }}
+<<<<<<< HEAD
+                                onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
+=======
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
                             />
                         </div>
                         <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>
