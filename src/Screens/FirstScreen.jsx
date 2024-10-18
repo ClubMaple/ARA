@@ -8,12 +8,11 @@ function FirstScreen () {
         /* Aqui va un contenedor -> texto de bienvenida, Explicación de la app -> Boton de Registro, Boton de Ingresar */
         <div className={Styles.container}>
             <div className={Styles.bienvenida}>
-                <h1>¡Bienvenido a la App!</h1>
+                <h1>¡Bienvenida a la App!</h1>
                 <img src="/ARA.png" alt="" />
             </div>
             <div className={Styles.botones}>
-                <button><Link to="/register">Registro</Link></button>
-                <button><Link to="/LogIn">Ingresar</Link></button>
+                <button><Link to="/privacitynotice">Siguiente</Link></button>
             </div>
             
         </div>

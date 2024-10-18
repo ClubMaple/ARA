@@ -11,6 +11,7 @@ import RegisterForm from './Screens/RegisterForm';
 import FakeCall from './Screens/FakeCall';
 import Settings from './Screens/Settings';
 import NotFound from './Screens/NotFound';
+import PrivacityNotice from './Screens/PrivacityNotice';
 
 /* Ahora no cuenta con una forma de navegar entre pantallas, para ver las diferentes pantallaas puedes cambiar
 de pantalla cambiandolo por la pantalla que quieres ver  ( Home , FirstScreen o RegisterForm )*/
@@ -25,6 +26,7 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/fakeCall" element={<FakeCall />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/privacitynotice" element={<PrivacityNotice />} />
         <Route path='*' element={<NotFound/>} />
 
       </Routes>

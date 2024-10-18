@@ -6,6 +6,9 @@
     min-height: 90vh;
     text-align: center;
 }
+body {
+    background-color: lightblue;
+}
 
 .bienvenida {
     font-size: 30px;
