@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    /* PlaceHolder */
     background-color: white;
 }
 
@@ -16,123 +15,81 @@
     max-height: 200px;
     border-radius: 50%;
     font-size: 2.5em;
-    /* Aumentado para mejor visibilidad */
     z-index: 10;
-
-    /* Color y estilo del botón */
     background-color: #FF0000;
-    /* Color rojo */
     color: #FFFFFF;
     font-weight: bold;
-    /* Color de texto blanco */
     border: solid 10px #000000;
-    /* Borde negro */
-
-    /* Sombra para dar profundidad */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
-    /* Transiciones suaves */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efecto hover */
 .SOSButton:hover {
     background-color: #FF4444;
-    /* Color rojo claro al pasar el mouse */
     transform: scale(1.05);
-    /* Aumentar ligeramente el tamaño */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    /* Aumentar sombra */
 }
-
-/* Efecto active (cuando se hace clic) */
-.SOSButton:active {
-    transform: scale(0.95);
-    /* Reducir el tamaño cuando se hace clic */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    /* Reducir sombra */
-}
-
 
 .SOSButton:active {
     background-color: white;
     color: red;
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
 
 /* Estilos comunes para los botones */
 .buttonPosition {
     position: absolute;
-    top: 50%;
-    /* Iniciar desde el centro vertical */
-    left: 70%;
-    /* Iniciar desde el centro horizontal */
-    transform: translate(-50%, -50%);
-    /* Centrar completamente */
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    /* Mantener en la posición final */
-    z-index: 1;
     width: 30%;
     height: 30%;
     max-width: 70px;
     max-height: 70px;
     border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 2px solid black;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 /* Botón izquierdo */
 .leftButton {
     animation-name: slidein-left;
     --final-left: 15%;
-    /* Posición final a la izquierda */
-    --final-top: 80%;
-    /* Posición final hacia abajo */
+    --final-top: 90%;
 }
 
 /* Botón central */
 .centerButton {
     animation-name: slidein-center;
-    --final-left: 42%;
-    /* Posición final en el centro */
-    --final-top: 95%;
-    /* Posición final más abajo */
+    --final-left: 50%;
+    --final-top: 110%;
 }
 
 /* Botón derecho */
 .rightButton {
     animation-name: slidein-right;
-    --final-right: -100%;
-    /* Posición final a la derecha */
-    --final-top: 80%;
-    /* Posición final hacia abajo */
+    --final-left: 85%;
+    --final-top: 90%;
 }
 
 /* Animación para el botón izquierdo */
 @keyframes slidein-left {
     from {
         top: 50%;
-        /* Iniciar desde el centro del botón principal */
         left: 50%;
-        /* Iniciar desde el centro del botón principal */
         transform: translate(-50%, -50%);
         width: 0;
-        /* Botones empiezan invisibles y pequeños */
         height: 0;
-        margin-left: 0%;
     }
-
     to {
         top: var(--final-top);
-        /* Moverse a la posición final en la parte superior */
         left: var(--final-left);
-        /* Moverse a la izquierda */
-        transform: none;
+        transform: translate(-50%, -50%);
         width: 100%;
-        /* Tamaño final del botón */
         height: 100%;
     }
 }
@@ -141,24 +98,16 @@
 @keyframes slidein-center {
     from {
         top: 50%;
-        /* Iniciar desde el centro del botón principal */
         left: 50%;
-        /* Iniciar desde el centro del botón principal */
         transform: translate(-50%, -50%);
         width: 0;
-        /* Botones empiezan invisibles y pequeños */
         height: 0;
-        margin-left: 0%;
     }
-
     to {
         top: var(--final-top);
-        /* Moverse a la posición final */
         left: var(--final-left);
-        /* Mantenerse centrado */
-        transform: none;
+        transform: translate(-50%, -50%);
         width: 100%;
-        /* Tamaño final del botón */
         height: 100%;
     }
 }
@@ -167,24 +116,54 @@
 @keyframes slidein-right {
     from {
         top: 50%;
-        /* Iniciar desde el centro del botón principal */
         left: 50%;
-        /* Iniciar desde el centro del botón principal */
         transform: translate(-50%, -50%);
         width: 0;
-        /* Botones empiezan invisibles y pequeños */
         height: 0;
-        margin-right: 0%;
     }
-
     to {
         top: var(--final-top);
-        /* Moverse a la posición final en la parte superior */
-        right: var(--final-right);
-        /* Moverse a la derecha */
-        transform: none;
+        left: var(--final-left);
+        transform: translate(-50%, -50%);
         width: 100%;
-        /* Tamaño final del botón */
         height: 100%;
     }
+}
+
+
+
+
+/* Estilos comunes para los botones adicionales */
+.buttonPosition {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+    background-color: #f74ce0; /* Color de fondo vibrante */
+    border: none; /* Sin borde para un diseño más limpio */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85em; /* Tamaño de fuente ligeramente más grande */
+    font-weight: bold;
+    color: #FFFFFF; /* Texto blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más notoria para mayor profundidad */
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover: cambio de color y sombra */
+.buttonPosition:hover {
+    background-color: #e838c8; /* Color de fondo un poco más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Agrandar un poco más para un efecto visual fuerte */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* Efecto active: retroceso y cambio de fondo */
+.buttonPosition:active {
+    background-color: #c216a8; /* Fondo más oscuro al presionar */
+    transform: scale(0.95); /* Reducir ligeramente para simular el clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reducida */
 }

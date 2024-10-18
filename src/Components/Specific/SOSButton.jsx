@@ -1,35 +1,37 @@
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import Styles from "./SOSButton.module.css";
 
 const SOSButton = () => {
-    const [showButtons, setShowButtons] = useState(false); //state de los botones
-    const timeRef = useRef(null); // tiempo
+    const [showButtons, setShowButtons] = useState(false);
+    const timeRef = useRef(null);
     const buttonRef = useRef(null);
-    
-    const handleSOSMauseDown = () => {
+
+    const handleSOSPressStart = () => {
         timeRef.current = setTimeout(() => {
             setShowButtons(true);
         }, 2000);
-    }
-    const handleSOSMauseUp = () => {
-        clearTimeout(timeRef.current);
-    }
+    };
 
-    /* Funciones de pruebas */
-    const functionalityTest = async() => {
-        alert('Prueba de funcionalidad')
-    }
+    const handleSOSPressEnd = () => {
+        clearTimeout(timeRef.current);
+    };
+
+    const functionalityTest = async () => {
+        alert('Prueba de funcionalidad');
+    };
 
     return (
         <div className={Styles.container}>
-            <button 
-                type="button" 
+            <button
+                type="button"
                 ref={buttonRef}
                 className={Styles.SOSButton}
-                onMouseDown={handleSOSMauseDown}
-                onMouseUp={handleSOSMauseUp}
-                onMouseLeave={handleSOSMauseUp}
-                >
+                onMouseDown={handleSOSPressStart}
+                onMouseUp={handleSOSPressEnd}
+                onMouseLeave={handleSOSPressEnd}
+                onTouchStart={handleSOSPressStart}
+                onTouchEnd={handleSOSPressEnd}
+            >
                 S.O.S
             </button>
 
@@ -55,9 +57,8 @@ const SOSButton = () => {
                     </button>
                 </>
             )}
-
         </div>
-    )
-}
+    );
+};
 
 export default SOSButton;
