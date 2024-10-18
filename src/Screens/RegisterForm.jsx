@@ -1,9 +1,58 @@
+<<<<<<< HEAD
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
+=======
+import React, { useState } from "react";
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
 import Styles from "./RegisterForm.module.css";
 
+const municipiosAguascalientes = [
+    "Aguascalientes",
+    "Asientos",
+    "Calvillo",
+    "Cosío",
+    "El Llano",
+    "Pabellón de Arteaga",
+    "Rincón de Romos",
+    "San Francisco de los Romo",
+    "San José de Gracia",
+    "Tepezalá"
+];
+
+const tiposDiscapacidad = [
+    "Visual",
+    "Auditiva",
+    "Motora",
+    "Intelectual",
+    "Psicosocial",
+    "No tengo ninguna"
+];
+
 function RegisterForm() {
+<<<<<<< HEAD
     const navigate = useNavigate(); // Inicializa useNavigate
+=======
+    const [formData, setFormData] = useState({
+        nombres: '',
+        apellidoPaterno: '',
+        apellidoMaterno: '',
+        telefono: '',
+        edad: '',
+        codigoPostal: '',
+        direccion: '',
+        numeroCasa: '',
+        discapacidad: '',
+        municipio: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value // Este cambio asegura que el valor se actualice correctamente
+        }));
+    };
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,89 +66,155 @@ function RegisterForm() {
                 <form onSubmit={handleSubmit}>
                     <h1>Registro</h1>
                     <div className={Styles.FormField}>
-                        <label>Nombre(s)</label>
+                        <label htmlFor="nombres">Nombre(s)</label>
                         <input
                             type="text"
                             name="nombres"
+                            id="nombres"
                             maxLength="30"
+<<<<<<< HEAD
                             onInput={(e) => {
                                 e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
                             }}
+=======
+                            value={formData.nombres}
+                            onChange={handleChange}
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
                         />
                     </div>
                     <div className={Styles.FormRow}>
                         <div className={Styles.FormField}>
-                            <label>Apellido paterno</label>
-                            <input type="text" name="apellidoPaterno" maxLength="15"
-                                onInput={(e) => {
-                                    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-                                }}
+                            <label htmlFor="apellidoPaterno">Apellido paterno</label>
+                            <input
+                                type="text"
+                                name="apellidoPaterno"
+                                id="apellidoPaterno"
+                                maxLength="15"
+                                value={formData.apellidoPaterno}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className={Styles.FormField}>
-                            <label>Apellido materno</label>
-                            <input type="text" name="apellidoMaterno" maxLength="15"
-                                onInput={(e) => {
-                                    e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-                                }}
+                            <label htmlFor="apellidoMaterno">Apellido materno</label>
+                            <input
+                                type="text"
+                                name="apellidoMaterno"
+                                id="apellidoMaterno"
+                                maxLength="15"
+                                value={formData.apellidoMaterno}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
                     <div className={Styles.FormRow}>
                         <div className={`${Styles.FormField} ${Styles.FormFieldTelefono}`}>
-                            <label>Teléfono</label>
+                            <label htmlFor="telefono">Teléfono</label>
                             <input
-                                type="number"
+                                type="tel"
                                 name="telefono"
+                                id="telefono"
                                 maxLength="10"
-                                onInput={(e) => {
-                                    if (e.target.value.length > 10) {
-                                        e.target.value = e.target.value.slice(0, 10);
+                                value={formData.telefono}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/[^0-9]/g, ''); // Solo números
+                                    if (value.length <= 10) {
+                                        setFormData((prevData) => ({ ...prevData, telefono: value }));
                                     }
                                 }}
+<<<<<<< HEAD
                                 onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
+=======
+>>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
                             />
                         </div>
                         <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>
-                            <label>Edad</label>
+                            <label htmlFor="edad">Edad</label>
                             <input
                                 type="number"
                                 name="edad"
+                                id="edad"
                                 maxLength="3"
-                                onInput={(e) => {
-                                    if (e.target.value.length > 3) {
-                                        e.target.value = e.target.value.slice(0, 3);
+                                value={formData.edad}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/[^0-9]/g, ''); // Solo números
+                                    if (value.length <= 3) {
+                                        setFormData((prevData) => ({ ...prevData, edad: value }));
                                     }
                                 }}
-                                onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
                             />
                         </div>
                     </div>
                     <div className={Styles.FormField}>
-                        <label>Nombre de Usuario</label>
-                        <input type="text" name="username" maxLength="25" />
+                        <label htmlFor="municipio">Municipio</label>
+                        <select
+                            name="municipio"
+                            id="municipio"
+                            value={formData.municipio} // Asegúrate de que esto esté correctamente conectado
+                            onChange={handleChange}
+                        >
+                            <option value="">Seleccione un municipio</option>
+                            {municipiosAguascalientes.map((municipio, index) => (
+                                <option key={index} value={municipio}>{municipio}</option>
+                            ))}
+                        </select>
                     </div>
-                    <div className={Styles.FormField}>
-                        <label>Contraseña</label>
-                        <input type="password" name="password" maxLength="30" />
-                    </div>
-                    <div className={Styles.FormField}>
-                        <label>Sexo</label>
-                        <div className={Styles.RadioGroup}>
-                            <label>
-                                <input type="radio" name="sexo" value="masculino" />
-                                Masculino
-                            </label>
-                            <label>
-                                <input type="radio" name="sexo" value="femenino" />
-                                Femenino
-                            </label>
-                            <label>
-                                <input type="radio" name="sexo" value="nobinario" />
-                                No binario
-                            </label>
+                    <div className={Styles.FormRow}>
+                        <div className={Styles.FormField}>
+                            <label htmlFor="codigoPostal">Código Postal</label>
+                            <input
+                                type="text"
+                                name="codigoPostal"
+                                id="codigoPostal"
+                                maxLength="5"
+                                value={formData.codigoPostal}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/[^0-9]/g, ''); // Solo números
+                                    if (value.length <= 5) {
+                                        setFormData((prevData) => ({ ...prevData, codigoPostal: value }));
+                                    }
+                                }}
+                            />
+                        </div>
+                        <div className={Styles.FormField}>
+                            <label htmlFor="numeroCasa">Número de Casa</label>
+                            <input
+                                type="text"
+                                name="numeroCasa"
+                                id="numeroCasa"
+                                maxLength="10"
+                                value={formData.numeroCasa}
+                                onChange={handleChange}
+                            />
                         </div>
                     </div>
+
+                    <div className={Styles.FormField}>
+                        <label htmlFor="direccion">Dirección</label>
+                        <input
+                            type="text"
+                            name="direccion"
+                            id="direccion"
+                            maxLength="100"
+                            value={formData.direccion}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className={Styles.FormField}>
+                        <label htmlFor="discapacidad">Discapacidad</label>
+                        <select
+                            name="discapacidad"
+                            id="discapacidad"
+                            value={formData.discapacidad} // Asegúrate de que esto esté correctamente conectado
+                            onChange={handleChange}
+                        >
+                            <option value="">Seleccione una opción</option>
+                            {tiposDiscapacidad.map((tipo, index) => (
+                                <option key={index} value={tipo}>{tipo}</option>
+                            ))}
+                        </select>
+                    </div>
+
                     <div className={Styles.botones}>
                         <button type="submit">Siguiente</button>
                     </div>
