@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-import React from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
-=======
 import React, { useState } from "react";
->>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
+import { useNavigate } from "react-router-dom";
 import Styles from "./RegisterForm.module.css";
 
+// Opciones de municipios y tipos de discapacidad
 const municipiosAguascalientes = [
     "Aguascalientes",
     "Asientos",
@@ -29,9 +26,7 @@ const tiposDiscapacidad = [
 ];
 
 function RegisterForm() {
-<<<<<<< HEAD
-    const navigate = useNavigate(); // Inicializa useNavigate
-=======
+    const navigate = useNavigate(); // Hook de navegación
     const [formData, setFormData] = useState({
         nombres: '',
         apellidoPaterno: '',
@@ -45,20 +40,20 @@ function RegisterForm() {
         municipio: ''
     });
 
+    // Manejador para cambios en los inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value // Este cambio asegura que el valor se actualice correctamente
+            [name]: value
         }));
     };
->>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
 
+    // Manejador para envío del formulario
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Redirige a la pantalla RegisterFormReferenteUno
-        navigate('/RegisterFormReferenteUno'); // Asegúrate de que la ruta esté correctamente configurada
-    }
+        navigate('/RegisterFormReferenteUno'); // Redirige a otra página
+    };
 
     return (
         <div className={Styles.container}>
@@ -72,14 +67,8 @@ function RegisterForm() {
                             name="nombres"
                             id="nombres"
                             maxLength="30"
-<<<<<<< HEAD
-                            onInput={(e) => {
-                                e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-                            }}
-=======
                             value={formData.nombres}
                             onChange={handleChange}
->>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
                         />
                     </div>
                     <div className={Styles.FormRow}>
@@ -121,10 +110,6 @@ function RegisterForm() {
                                         setFormData((prevData) => ({ ...prevData, telefono: value }));
                                     }
                                 }}
-<<<<<<< HEAD
-                                onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
-=======
->>>>>>> 436a90d517473c91f5cc76237760f65c9861eb23
                             />
                         </div>
                         <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>
@@ -149,7 +134,7 @@ function RegisterForm() {
                         <select
                             name="municipio"
                             id="municipio"
-                            value={formData.municipio} // Asegúrate de que esto esté correctamente conectado
+                            value={formData.municipio}
                             onChange={handleChange}
                         >
                             <option value="">Seleccione un municipio</option>
@@ -205,7 +190,7 @@ function RegisterForm() {
                         <select
                             name="discapacidad"
                             id="discapacidad"
-                            value={formData.discapacidad} // Asegúrate de que esto esté correctamente conectado
+                            value={formData.discapacidad}
                             onChange={handleChange}
                         >
                             <option value="">Seleccione una opción</option>
