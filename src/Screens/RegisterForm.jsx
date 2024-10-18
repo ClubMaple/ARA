@@ -1,11 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import Styles from "./RegisterForm.module.css";
 
 function RegisterForm() {
+    const navigate = useNavigate(); // Inicializa useNavigate
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Hi');
+        // Redirige a la pantalla RegisterFormReferenteUno
+        navigate('/RegisterFormReferenteUno'); // Asegúrate de que la ruta esté correctamente configurada
     }
 
     return (
@@ -22,7 +25,8 @@ function RegisterForm() {
                             onInput={(e) => {
                                 e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
                             }}
-                        />                    </div>
+                        />
+                    </div>
                     <div className={Styles.FormRow}>
                         <div className={Styles.FormField}>
                             <label>Apellido paterno</label>
@@ -54,7 +58,6 @@ function RegisterForm() {
                                     }
                                 }}
                                 onKeyDown={(e) => e.key === 'e' && e.preventDefault()}
-
                             />
                         </div>
                         <div className={`${Styles.FormField} ${Styles.FormFieldEdad}`}>

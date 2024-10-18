@@ -1,22 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Styles from "./FirstScreen.module.css";
 
+function FirstScreen() {
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
-function FirstScreen () {
+    const handleNextClick = () => {
+        setLoading(true);
+        // Simular un retraso para la carga
+        setTimeout(() => {
+            navigate("/privacitynotice");
+        }, 2000); // 2 segundos de carga
+    };
+
     return (
-        /* Aqui va un contenedor -> texto de bienvenida, Explicación de la app -> Boton de Registro, Boton de Ingresar */
         <div className={Styles.container}>
-            <div className={Styles.bienvenida}>
+            <div className={`${Styles.bienvenida} ${Styles.fadeIn}`}>
                 <h1>¡Bienvenida a la App!</h1>
-                <img src="/ARA.png" alt="" />
+                <img src="/ARA.png" alt="Logo" className={Styles.fadeIn} />
             </div>
-            <div className={Styles.botones}>
-                <button><Link to="/privacitynotice">Siguiente</Link></button>
-            </div>
-            
+            {loading ? (
+                <div className={Styles.loaderContainer}>
+                    <div className={Styles.loader}>
+                        <div className={Styles.spinner}></div>
+                        <p>Cargando...</p>
+                    </div>
+                </div>
+            ) : (
+                <div className={Styles.botones}>
+                    <button className={Styles.fadeIn} onClick={handleNextClick}>
+                        Siguiente
+                    </button>
+                </div>
+            )}
         </div>
-    )
+    );
 }
 
 export default FirstScreen;
