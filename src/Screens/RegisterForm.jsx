@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
+=======
+import { useNavigate } from "react-router-dom";
+>>>>>>> upstream/master
 import Styles from "./RegisterForm.module.css";
 
+// Opciones de municipios y tipos de discapacidad
 const municipiosAguascalientes = [
     "Aguascalientes",
     "Asientos",
@@ -24,6 +29,10 @@ const tiposDiscapacidad = [
 ];
 
 function RegisterForm() {
+<<<<<<< HEAD
+=======
+    const navigate = useNavigate(); // Hook de navegación
+>>>>>>> upstream/master
     const [formData, setFormData] = useState({
         nombres: '',
         apellidoPaterno: '',
@@ -37,18 +46,25 @@ function RegisterForm() {
         municipio: ''
     });
 
+    // Manejador para cambios en los inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value // Este cambio asegura que el valor se actualice correctamente
+            [name]: value
         }));
     };
 
+    // Manejador para envío del formulario
     const handleSubmit = (e) => {
         e.preventDefault();
+<<<<<<< HEAD
         alert('Hi');
     }
+=======
+        navigate('/RegisterFormReferenteUno'); // Redirige a otra página
+    };
+>>>>>>> upstream/master
 
     return (
         <div className={Styles.container}>
@@ -129,7 +145,7 @@ function RegisterForm() {
                         <select
                             name="municipio"
                             id="municipio"
-                            value={formData.municipio} // Asegúrate de que esto esté correctamente conectado
+                            value={formData.municipio}
                             onChange={handleChange}
                         >
                             <option value="">Seleccione un municipio</option>
@@ -185,7 +201,7 @@ function RegisterForm() {
                         <select
                             name="discapacidad"
                             id="discapacidad"
-                            value={formData.discapacidad} // Asegúrate de que esto esté correctamente conectado
+                            value={formData.discapacidad}
                             onChange={handleChange}
                         >
                             <option value="">Seleccione una opción</option>
